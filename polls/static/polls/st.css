@@ -1,0 +1,87 @@
+body
+{
+	margin: 0;
+    padding: 0;
+    background: url(abst1.jpg);
+    background-size: cover;
+    font-family: sans-serif;
+}
+.loginbox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 480px;
+	border-radius: 25px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background-color: rgba(0,0,0,.7);
+}
+.qq
+{
+	width: : 100px;
+	height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+}
+h2
+{
+	padding: 0 0 10px;
+	color: #efed4f;
+	text-align: center;
+}
+p
+{
+	font-weight: bold;
+	color: #fff;
+}
+input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+input[type="text"],
+input[type="password"]
+{   
+	border: none;
+	border-bottom: 1px solid red;
+	background: transparent;
+	height: 35px;
+	color: #fff;
+	font-size: 16px;
+
+}
+::placeholder
+{
+	color: rgba(225,225,255,.7);
+
+}
+input[type="submit"]
+{
+	border: none;
+	height: 35px;
+	color: #fff;
+	font-size: 16px;
+	background: red;
+	border-radius: 20px;
+	cursor: pointer;
+}
+input[type="submit"]:hover
+{
+	background: #efed4f;
+	color: #262626;
+}
+a
+{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	
+}
+

@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Online Voting System</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "polls/index.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+</head>
+<body>
+<div id="outer">
+       
+    <div id="heading">
+        <h1>Online Voting System</h1>
+        
+    </div>   
+    
+    <div id="menu">
+        <ul id="ulst">
+            <li id="list"><a class="indent" href="{% url 'index' %}"> Home</a></li>
+            <li id="list"><a class="indent" href="{% url 'results' %}"> Results</a></li>
+            <li id="list"><a class="indent" href="{% url 'register' %}"> Register</a></li>
+            <li id="list"><a class="indent" href="{% url 'login' %}"> Log In</a></li>
+        </ul> 
+        
+        
+    </div>
+    
+    <div id="parent">
+        <div id="info">
+            <h1> &nbsp;&nbsp;&nbsp;Instructions</h1><br>
+        <ul>
+        <h2>How to Register?</h2>If you do not have an account already, click on Register. Enter your details in the required fields to
+           register your account.
+       <h2>How to Log In?</h2>If you have an account, click on Log in. After successful Log In, you will be taken to the voting 
+           page. You can cast your vote only one time, and it can not be changed later.
+       <h2>How to view results of the Voting?</h2>Click on the Results link to view the results of the voting.
+        </ul>
+            
+        
+        
+        
+        </div>
+        <div id="sidebar">
+        <ul id="ulst">
+        <li><a href="http://reck.ac.in/"> REC Kannauj's website</a></li> 
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>  
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+         <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        <li><a href="https://aktu.ac.in/"> AKTU's website</a></li>
+        </ul>
+        
+        
+        
+        </div>
+    </div>
+    
+</div>
+    <div id="footer">
+        <p ></p><br><br><br><pre>
+   Contact us at:                                               ADDRESS
+   zeusthepotter@gmail.com                                     Rajkiya Engineering College,Kannauj
+   7889288094                                                  Kannauj-209732(UP)
+                                                               
+        </pre>
+        
+        
+    
+    
+    </div>
+ 
+    
+
+
+</body>
+</html>

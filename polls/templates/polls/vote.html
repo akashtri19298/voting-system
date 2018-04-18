@@ -1,0 +1,12 @@
+<h3>This is the voting page.</h3>
+
+
+<form action="{% url "vote" %}" method="post">
+{% csrf_token %}
+    <p>You are logged in as {{ current_user.username }}</p>
+{% for c in candidate %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ c.pk }}" />
+    <label for="choice{{ forloop.counter }}">{{ c.candidate_name }}</label><br />
+{% endfor %}
+<input type="submit" value="Vote" />
+</form>
