@@ -5,6 +5,7 @@ class Candidate(models.Model):
     candidate_name=models.CharField(max_length=30)
     candidate_info=models.CharField(max_length=300)
     vote_count=models.IntegerField(default=0)
+    profile_image = models.ImageField(blank=True, null=True)
     def __str__(self):
         return self.candidate_name
         
@@ -28,9 +29,9 @@ class VoterDetails(models.Model):
     voter_user=models.OneToOneField(User,on_delete=models.CASCADE)
     status=models.BooleanField(default=0)
     voter_roll=models.CharField(max_length=10,null=True)
-    candidate_voted=models.ForeignKey(Candidate,on_delete=models.SET_NULL,null=True)
+    candidate_voted=models.ForeignKey(Candidate,on_delete=models.SET_NULL, null = True,blank=True )
     def __str__(self):
-        return self.voter_user.first_name
+        return self.voter_user.username
     
 
     

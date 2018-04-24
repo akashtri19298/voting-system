@@ -1,12 +1,45 @@
-<h3>This is the voting page.</h3>
+{% extends 'polls/base.html' %}
+
+{% block heading%}
+<h1>Voting Page</h1>
+    {% endblock %}
+
+{% block title %}
+{% load static %}
+<link href="{% static "polls/minimal-table.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+{% if current_user.voterdetails.candidate_voted %}
+<h4>You have voted for {{ current_user.voterdetails.candidate_voted }}.</h4>
+
+
+
+
+{% else %}
 
 
 <form action="{% url "vote" %}" method="post">
 {% csrf_token %}
-    <p>You are logged in as {{ current_user.username }}</p>
-{% for c in candidate %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ c.pk }}" />
-    <label for="choice{{ forloop.counter }}">{{ c.candidate_name }}</label><br />
+    
+    <br>Select a candidate and click on vote to register your vote.<br><br>
+    <table align="center">
+    {% for c in candidate %}
+    <tr>
+        <td><label for="choice{{ forloop.counter }}">{{ forloop.counter }}.</label></td>
+        <td><label for="choice{{ forloop.counter }}">{{ c.candidate_name }}</label></td>
+        <td><label for="choice{{ forloop.counter }}"><img src="{{ c.profile_image.url }}" width="150px" height="150px"></label></td>
+        <td><input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ c.pk }}"></td>
+        
+    </tr>
 {% endfor %}
-<input type="submit" value="Vote" />
+<tr>
+    <td colspan="4">
+   <input type="submit" value="Vote" /> 
+    </td>
+</tr>
+ </table>   
 </form>
+
+{% endif %}
+{% endblock %}

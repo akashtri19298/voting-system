@@ -1,21 +1,18 @@
-<!doctype html>
-<html>
-  <head>
-  	<meta charset="utf-8">
-  	<title>LOGIN PAGE</title>
-      {% load static %}
-  	<link rel="stylesheet" type="text/css" href="{% static "polls/st.css" %}">
-  </head>
-  <body>
+ {% extends 'polls/base.html' %}
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "polls/st.css" %}">
+{% endblock %}
+     
       {% if form.errors %}
       <p>Your username and password didn't match. Please try again.</p>
       {% endif %}
       {% if next %}
-      {% if user.is_authenticated %}
-      <p>Your account doesn't have access to this page. To proceed,
-      please login with an account that has access.</p>
-      {% else %}
-      <p>Please login to see this page.</p>
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
      {% endif %}
      {% endif %}
       
@@ -36,4 +33,4 @@
   		<a href="a.html">Forgot Password</a>
   	</form>
   </div>
-  </body>
+  {% endblock %}

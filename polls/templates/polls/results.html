@@ -1,2 +1,29 @@
-<h3>Poll Results</h3>
-<p>The winner of the polls is {{ winner }}.</p>
+{% extends 'polls/base.html' %}
+{% block title %}
+{% load static %}
+<link href="{% static "polls/minimal-table.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block heading%}
+<h1>Poll Results</h1>
+    {% endblock %}
+
+{% block content %}
+<table align="center">
+    <caption><h3>Results</h3></caption>
+
+<tr>
+    <td><b>Candidate's Name</b></td>
+    <td><b>Candidate's Photo </b></td>
+    <td><b>Votes Received</b></td>
+</tr>
+{% for c in clist %}
+    <tr>
+        <td>{{ c.candidate_name }}</td>
+        <td><img src="{{ c.profile_image.url }}" width="150px" height="150px"></td>
+        <td>{{ c.vote_count }}</td>
+    </tr>
+{% endfor %}
+</table>    
+{% endblock %}
